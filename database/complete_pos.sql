@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS complete_pos CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE complete_pos;
+DROP TABLE IF EXISTS sales; DROP TABLE IF EXISTS users; DROP TABLE IF EXISTS customers; DROP TABLE IF EXISTS products;
+CREATE TABLE products (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,name VARCHAR(100) NOT NULL,price DECIMAL(10,2) NOT NULL,stock_quantity INT NOT NULL DEFAULT 0,image VARCHAR(255),created_at DATETIME NOT NULL) ENGINE=InnoDB;
+CREATE TABLE customers (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,full_name VARCHAR(100) NOT NULL,email VARCHAR(100) NOT NULL,phone VARCHAR(20),created_at DATETIME NOT NULL) ENGINE=InnoDB;
+CREATE TABLE users (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,username VARCHAR(50) NOT NULL UNIQUE,full_name VARCHAR(100) NOT NULL,password VARCHAR(255) NOT NULL,avatar VARCHAR(255),created_at DATETIME NOT NULL) ENGINE=InnoDB;
+CREATE TABLE sales (id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,product_id INT UNSIGNED NOT NULL,customer_id INT UNSIGNED,sold_by INT UNSIGNED NOT NULL,quantity INT NOT NULL,total_price DECIMAL(10,2) NOT NULL,created_at DATETIME NOT NULL,FOREIGN KEY(product_id) REFERENCES products(id),FOREIGN KEY(customer_id) REFERENCES customers(id) ON DELETE SET NULL,FOREIGN KEY(sold_by) REFERENCES users(id)) ENGINE=InnoDB;
+INSERT INTO products(name,price,stock_quantity,created_at) VALUES ('Wireless Mouse',599.00,25,NOW()),('Mechanical Keyboard',1899.00,12,NOW()),('USB-C Cable',249.00,40,NOW());
+INSERT INTO customers(full_name,email,phone,created_at) VALUES ('Juan Dela Cruz','juan@example.com','09171234567',NOW()),('Maria Santos','maria@example.com','09181234567',NOW());
+INSERT INTO users(username,full_name,password,created_at) VALUES ('admin','System Administrator','$2b$12$3vkRt5Fvc9GR5tqVgne4IeFtPravhFxV9F5LtazL5uTRXze00ZWAO',NOW());

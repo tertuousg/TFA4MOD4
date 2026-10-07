@@ -1,0 +1,51 @@
+:root { color-scheme: light; font-family: Inter, Arial, sans-serif; color: #172033; background: #f4f7fb; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+.site-header { display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; padding: 1rem max(1.25rem, calc((100vw - 1080px) / 2)); background: #102a43; color: white; }
+.brand { color: white; font-size: 1.15rem; font-weight: 800; text-decoration: none; }
+nav { display: flex; flex-wrap: wrap; gap: 1rem; }
+nav a { color: #d9e8f5; text-decoration: none; }
+nav a:hover { color: white; }
+.container { width: min(1080px, calc(100% - 2rem)); margin: 2.5rem auto; }
+.page-heading { display: flex; justify-content: space-between; align-items: end; gap: 1rem; margin-bottom: 1.25rem; }
+h1 { margin: .2rem 0 1.25rem; font-size: clamp(1.75rem, 4vw, 2.4rem); }
+.eyebrow { margin: 0; color: #486581; font-size: .78rem; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
+.button { display: inline-block; border: 0; border-radius: .55rem; padding: .72rem 1rem; background: #1167b1; color: white; font: inherit; font-weight: 700; text-decoration: none; cursor: pointer; }
+.button:hover { background: #0b4f8a; }
+.button.secondary { background: #e7eef5; color: #243b53; }
+.table-wrap, .form-card { overflow: hidden; border: 1px solid #d9e2ec; border-radius: .8rem; background: white; box-shadow: 0 8px 24px rgba(16, 42, 67, .06); }
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: .9rem 1rem; border-bottom: 1px solid #e7eef5; text-align: left; vertical-align: middle; }
+th { background: #eef4f8; color: #334e68; font-size: .82rem; text-transform: uppercase; }
+tbody tr:last-child td { border-bottom: 0; }
+.empty { color: #627d98; text-align: center; }
+.avatar { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; background: #e7eef5; }
+.badge { display: inline-block; border-radius: 999px; padding: .3rem .65rem; background: #e3f2fd; color: #0b4f8a; font-size: .82rem; font-weight: 700; }
+.text-link { color: #1167b1; font-weight: 700; }
+.form-card { max-width: 680px; margin: 0 auto; padding: clamp(1.25rem, 4vw, 2.25rem); }
+label { display: block; margin: 1rem 0 .4rem; font-weight: 700; }
+label span { color: #c62828; }
+input, select { width: 100%; border: 1px solid #bcccdc; border-radius: .5rem; padding: .72rem .8rem; background: white; color: #172033; font: inherit; }
+input:focus, select:focus { outline: 3px solid rgba(17, 103, 177, .15); border-color: #1167b1; }
+.help { margin: .45rem 0 0; color: #627d98; font-size: .88rem; }
+.form-actions { display: flex; gap: .7rem; margin-top: 1.5rem; }
+.alert { margin-bottom: 1rem; border-radius: .55rem; padding: .85rem 1rem; }
+.alert.success { border: 1px solid #9ae6b4; background: #f0fff4; color: #22543d; }
+.alert.error { border: 1px solid #feb2b2; background: #fff5f5; color: #822727; }
+.alert ul { margin: .45rem 0 0; padding-left: 1.2rem; }
+@media (max-width: 680px) { .site-header, .page-heading { align-items: flex-start; flex-direction: column; } .table-wrap { overflow-x: auto; } table { min-width: 660px; } }
+.nav-form, .row-actions form { margin: 0; }
+.nav-form button { border: 0; padding: 0; background: none; color: #d9e8f5; font: inherit; cursor: pointer; }
+.full { width: 100%; margin-top: 1.25rem; }
+.login-card { margin-top: 8vh; max-width: 460px; }
+.stat-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(190px,1fr)); gap: 1rem; }
+.stat { display: flex; flex-direction: column; border: 1px solid #d9e2ec; border-radius: .8rem; padding: 1.5rem; background: white; color: #334e68; text-decoration: none; box-shadow: 0 8px 24px rgba(16,42,67,.06); }
+.stat strong { color: #1167b1; font-size: 2rem; }
+.card-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(240px,1fr)); gap: 1.1rem; }
+.product-card { overflow: hidden; border: 1px solid #d9e2ec; border-radius: .8rem; background: white; box-shadow: 0 8px 24px rgba(16,42,67,.06); }
+.product-card > img { width: 100%; aspect-ratio: 4/3; object-fit: cover; background: #e7eef5; }
+.product-card > div { padding: 1rem; }
+.product-card h2 { margin: 0 0 .35rem; font-size: 1.15rem; }
+.price { margin: 0; color: #1167b1; font-size: 1.25rem; font-weight: 800; }
+.row-actions { display: flex; align-items: center; gap: .8rem; }
+.danger-link { border: 0; padding: 0; background: none; color: #c53030; font: inherit; font-weight: 700; text-decoration: underline; cursor: pointer; }
